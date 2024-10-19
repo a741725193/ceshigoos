@@ -4,13 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <behaviors/mouse_keys.dtsi>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/outputs.h>
-
-#include <dt-bindings/zmk/bt.h>
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
@@ -18,9 +14,6 @@
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
-
-
-
 #define U_MS_U &mmv MOVE_UP
 #define U_MS_D &mmv MOVE_DOWN
 #define U_MS_L &mmv MOVE_LEFT
@@ -31,7 +24,7 @@
 #define U_WH_R &msc SCRL_RIGHT
 
 / {
- behaviors {
+    behaviors {
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
@@ -51,19 +44,19 @@
             delay-ms = <0>;                   // 10
         };
     };
-  //  conditional_layers { compatible = "zmk,conditional-layers"; };
 
-   // combos { compatible = "zmk,combos"; };
+    //  conditional_layers { compatible = "zmk,conditional-layers"; };
+    // combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
 
         alpha_qwerty {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R    &kp T                            &kp Y    &kp U     &kp I      &kp O    &kp P
-&kp A  &kp S  &kp D  &kp F    &kp G                            &kp H    &kp J     &kp K      &kp L    &kp S
-&kp Z  &kp X  &kp C  &kp V    &kp B                            &kp N    &kp M     &kp COMMA  &kp DOT  &kp SLASH
-                     &kp ESC  &kp SPACE  &kp TAB    &kp ENTER  &kp ESC  &kp BSPC
+&kp Q  &kp W  &kp E  &kp R    &kp T                          &kp Y    &kp U     &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F    &kp G                          &kp H    &kp J     &kp K      &kp L    &kp S
+&kp Z  &kp X  &kp C  &kp V    &kp B                          &kp N    &kp M     &kp COMMA  &kp DOT  &kp SLASH
+                     &kp ESC  &kp SPACE  &kp P    &kp ENTER  &kp ESC  &kp BSPC
             >;
         };
     };
